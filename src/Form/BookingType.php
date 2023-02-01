@@ -14,10 +14,10 @@ class BookingType extends AbstractType
         $builder
             ->add('firstname')
             ->add('lastname')
-            ->add('Phone')
+            ->add('phone')
             ->add('beginAt')
             ->add('endAt')
-            ->add('category')
+            ->add('category', null, ['choice_label' => 'name'])
         ;
     }
 
