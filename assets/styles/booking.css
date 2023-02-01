@@ -1,0 +1,44 @@
+.datetime {
+    width: 12rem;
+}
+.datetime-tokens {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.form-info {
+    width: 15rem;
+}
+
+.form-tokens {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.endAt-form {
+    margin-top: 1rem;
+}
+.button-form {
+    margin-top: 1.5rem;
+}
+
+.text_for_booking {
+    width: 40rem;
+    padding: 5rem;
+}
+
+.all-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-page-title {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}

@@ -4,9 +4,53 @@
 
 {% block body %}
 {% include 'header/_header.html.twig' %}
-    <h1>Create new Booking</h1>
+    <h1 class="form-page-title">Create new Booking</h1>
+    <section class="all-form">
+        <div class="text_for_booking">
+            <h1>Make your reservation</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facere, soluta magnam consectetur molestias itaque
+                ad sint fugit architecto incidunt iste culpa perspiciatis possimus voluptates aliquid consequuntur cumque quasi.
+                Perspiciatis.
+            </p>
+        </div>
+    {{ form_start(form) }}
+        <div class="form-tokens">
+<div>
+    {{ form_label(form.firstname) }}
+    {{ form_errors(form.firstname) }}
+    {{ form_widget(form.firstname, { attr : { class : "form-control form-info"}}) }}
 
-    {{ include('booking/_form.html.twig') }}
+    {{ form_label(form.lastname) }}
+    {{ form_errors(form.lastname) }}
+    {{ form_widget(form.lastname, { attr : { class : "form-control form-info"}}) }}
 
-    <a href="{{ path('app_booking_index') }}">back to list</a>
+    {{ form_label(form.phone) }}
+    {{ form_errors(form.phone) }}
+    {{ form_widget(form.phone, { attr : { class : "form-control form-info"}}) }}
+
+
+    {{ form_label(form.category) }}
+    {{ form_errors(form.category) }}
+    {{ form_widget(form.category, { attr : { class : "form-select form-info"}}) }}
+</div>
+        <div class="datetime-tokens">
+            <div>
+            {{ form_label(form.beginAt) }}
+            {{ form_errors(form.beginAt) }}
+            {{ form_widget(form.beginAt, { attr : { class : "form-control datetime"}}) }}
+            </div>
+            <div class="endAt-form">
+            {{ form_label(form.endAt) }}
+            {{ form_errors(form.endAt) }}
+            {{ form_widget(form.endAt, { attr : { class : "form-control datetime"}}) }}
+            </div>
+            <button class="btn button-form btn-success">{{ button_label|default('Save') }}</button>
+
+        </div>
+        </div>
+
+    {{ form_end(form) }}
+    </section>
+
+
 {% endblock %}
