@@ -4,7 +4,7 @@
 
 {% block body %}
 {% include 'header/_header.html.twig' %}
-    <h1 class="form-page-title">Create new Booking</h1>
+    <div class="wrap">
     <section class="all-form">
         <div class="text_for_booking">
             <h1>Make your reservation</h1>
@@ -51,6 +51,6 @@
 
     {{ form_end(form) }}
     </section>
-
-
+    </div>
+{% include 'footer/_footer.html.twig' %}
 {% endblock %}

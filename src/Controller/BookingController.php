@@ -40,7 +40,7 @@ class BookingController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_booking_show', methods: ['GET'])]
+    #[Route('/calendar/{id}', name: 'app_booking_show', methods: ['GET'])]
     public function show(Booking $booking): Response
     {
         return $this->render('booking/show.html.twig', [
@@ -48,7 +48,7 @@ class BookingController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_booking_edit', methods: ['GET', 'POST'])]
+    #[Route('/calendar/{id}/edit', name: 'app_booking_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Booking $booking, BookingRepository $bookingRepository): Response
     {
         $form = $this->createForm(BookingType::class, $booking);
@@ -66,7 +66,7 @@ class BookingController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_booking_delete', methods: ['POST'])]
+    #[Route('/calendar/{id}', name: 'app_booking_delete', methods: ['POST'])]
     public function delete(Request $request, Booking $booking, BookingRepository $bookingRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$booking->getId(), $request->request->get('_token'))) {
@@ -75,7 +75,7 @@ class BookingController extends AbstractController
 
         return $this->redirectToRoute('app_booking_index', [], Response::HTTP_SEE_OTHER);
     }
-    #[Route('/calendar/show', name: 'app_booking_calendar', methods: ['GET'])]
+    #[Route('/calendar/calendar/show', name: 'app_booking_calendar', methods: ['GET'])]
     public function calendar(): Response
     {
         return $this->render('booking/calendar.html.twig');

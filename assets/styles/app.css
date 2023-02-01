@@ -1,7 +1,11 @@
 @import "home.css";
 @import "booking.css";
 
-body {
-    background-color: lightgray;
-}
 
+
+.footer-website {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
