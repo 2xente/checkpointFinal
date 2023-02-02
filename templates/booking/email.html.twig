@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>New Booking</title>
+</head>
+<body>
+<h1>Thank you of your reservation! </h1>
+<p>Hello, {{ booking.firstname }} {{ booking.lastname }},  your booking is good for {{ booking.category.name }} at {{ booking.beginAt ? booking.beginAt|date('Y-m-d H:i:s') : '' }}</p>
+<p>Thanks for your trust</p>
+</body>
+</html>
