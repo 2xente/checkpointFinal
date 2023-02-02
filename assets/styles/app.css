@@ -2,10 +2,6 @@
 @import "booking.css";
 
 
-
-.footer-website {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+body {
+    background-color: cornsilk;
 }

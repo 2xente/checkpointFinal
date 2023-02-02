@@ -10,28 +10,32 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <h6>Id</h6>
                 <td>{{ booking.id }}</td>
             </tr>
             <tr>
-                <th>Firstname</th>
+                <h6>Firstname</h6>
                 <td>{{ booking.firstname }}</td>
             </tr>
             <tr>
-                <th>Lastname</th>
+                <h6>Lastname</h6>
                 <td>{{ booking.lastname }}</td>
             </tr>
             <tr>
-                <th>Phone</th>
+                <h6>Phone</h6>
                 <td>{{ booking.Phone }}</td>
             </tr>
             <tr>
-                <th>BeginAt</th>
+                <h6>BeginAt</h6>
                 <td>{{ booking.beginAt ? booking.beginAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>EndAt</th>
+                <h6>EndAt</h6>
                 <td>{{ booking.endAt ? booking.endAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <h6>Category</h6>
+                <td>{{ booking.category.name }}</td>
             </tr>
         </tbody>
     </table>
