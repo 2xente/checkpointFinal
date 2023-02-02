@@ -4,7 +4,13 @@
 
 {% block body %}
     {% include 'header/_header.html.twig' %}
-
+    {% for category, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
     <div class="site-wrapper bg_color margin_homepage">
 
         <div class="site-wrapper-inner ">

@@ -9,6 +9,8 @@ use App\Repository\BookingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/booking')]
@@ -23,7 +25,7 @@ class BookingController extends AbstractController
     }
 
     #[Route('/new', name: 'app_booking_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, BookingRepository $bookingRepository): Response
+    public function new(Request $request, BookingRepository $bookingRepository, MailerInterface $mailer): Response
     {
         $booking = new Booking();
         $form = $this->createForm(BookingType::class, $booking);
@@ -31,8 +33,16 @@ class BookingController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $bookingRepository->save($booking, true);
+            $this->addFlash('success', 'Your Booking is good !');
+            $email = (new Email())
+                ->from('alahoule@lala.com')
+                ->to('lasserrebixente1@gmail.com')
+                ->subject('Your Booking For Hestia !')
+                ->html($this->renderView('booking/email.html.twig', ['booking'=> $booking ]));
 
-            return $this->redirectToRoute('app_booking_index', [], Response::HTTP_SEE_OTHER);
+            $mailer->send($email);
+
+            return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('booking/new.html.twig', [
@@ -74,7 +84,7 @@ class BookingController extends AbstractController
             $bookingRepository->remove($booking, true);
         }
 
-        return $this->redirectToRoute('app_booking_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_booking_calendar', [], Response::HTTP_SEE_OTHER);
     }
     #[Route('/calendar/calendar/show', name: 'app_booking_calendar', methods: ['GET'])]
     public function calendar(): Response
