@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Booking;
+use App\Entity\Category;
 use App\Form\BookingType;
 use App\Repository\BookingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -44,7 +45,7 @@ class BookingController extends AbstractController
     public function show(Booking $booking): Response
     {
         return $this->render('booking/show.html.twig', [
-            'booking' => $booking,
+            'booking' => $booking
         ]);
     }
 
