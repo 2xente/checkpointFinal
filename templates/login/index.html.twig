@@ -6,11 +6,12 @@
 {% block body %}
     {% include 'header/_header.html.twig' %}
 
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+
 
     <main class="form-signin w-100 m-auto ">
+        {% if error %}
+            <div class="alert alert-warning">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
         <form action="{{ path('app_login') }}" method="post" class="login_form" >
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 

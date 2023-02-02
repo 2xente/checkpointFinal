@@ -36,7 +36,7 @@ class BookingController extends AbstractController
             $this->addFlash('success', 'Your Booking is good !');
             $email = (new Email())
                 ->from('alahoule@lala.com')
-                ->to('lasserrebixente1@gmail.com')
+                ->to($booking->getEmail())
                 ->subject('Your Booking For Hestia !')
                 ->html($this->renderView('booking/email.html.twig', ['booking'=> $booking ]));
 

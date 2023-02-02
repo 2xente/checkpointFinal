@@ -14,8 +14,11 @@
             </p>
         </div>
     {{ form_start(form) }}
+
         <div class="form-tokens booking_form_block">
+
 <div>
+
     {{ form_label(form.firstname) }}
     {{ form_errors(form.firstname) }}
     {{ form_widget(form.firstname, { attr : { class : "form-control form-info"}}) }}
@@ -23,6 +26,10 @@
     {{ form_label(form.lastname) }}
     {{ form_errors(form.lastname) }}
     {{ form_widget(form.lastname, { attr : { class : "form-control form-info"}}) }}
+
+    {{ form_label(form.email) }}
+    {{ form_errors(form.email) }}
+    {{ form_widget(form.email, { attr : { class : "form-control form-info"}}) }}
 
     {{ form_label(form.phone) }}
     {{ form_errors(form.phone) }}

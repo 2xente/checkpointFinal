@@ -17,6 +17,7 @@ class BookingType extends AbstractType
             ->add('phone')
             ->add('beginAt')
             ->add('endAt')
+            ->add('email')
             ->add('category', null, ['choice_label' => 'name'])
         ;
     }
