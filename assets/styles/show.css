@@ -1,0 +1,39 @@
+.div_name {
+    display: flex;
+
+}
+
+.div_one_name {
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    width: 12rem;
+}
+
+.div_button {
+    display: flex;
+    padding: 1rem;
+}
+.show_booking_div {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    width: 25rem;
+    justify-content: center;
+    border-radius: 1rem;
+    background-color: #fff4cc;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+}
+
+.show_booking {
+    display: flex;
+    justify-content: center;
+}
+
+.button_show {
+    margin-right: 3rem;
+}
+
+.resume_title {
+    text-align: center;
+    margin: 5rem;
+}

@@ -5,44 +5,50 @@
 {% block body %}
     {% include 'header/_header.html.twig' %}
 
-    <h1>Booking</h1>
+    <h2 class="resume_title">Booking Resume</h2>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <h6>Id</h6>
-                <td>{{ booking.id }}</td>
-            </tr>
-            <tr>
+
+<section  class="show_booking">
+<div class="show_booking_div">
+            <div class="div_name">
+            <div class="div_one_name">
                 <h6>Firstname</h6>
-                <td>{{ booking.firstname }}</td>
-            </tr>
-            <tr>
+                <p>{{ booking.firstname }}</p>
+            </div>
+            <div class="div_one_name">
                 <h6>Lastname</h6>
-                <td>{{ booking.lastname }}</td>
-            </tr>
-            <tr>
+                <p>{{ booking.lastname }}</p>
+            </div>
+            </div>
+    <div class="div_name">
+            <div class="div_one_name">
                 <h6>Phone</h6>
-                <td>{{ booking.Phone }}</td>
-            </tr>
-            <tr>
+                <p>{{ booking.Phone }}</p>
+            </div>
+        <div class="div_one_name">
+            <h6>Category</h6>
+            <p>{{ booking.category.name }}</p>
+        </div>
+    </div>
+    <div class="div_name">
+            <div class="div_one_name">
                 <h6>BeginAt</h6>
-                <td>{{ booking.beginAt ? booking.beginAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
+                <p>{{ booking.beginAt ? booking.beginAt|date('Y-m-d H:i:s') : '' }}</p>
+            </div>
+            <div class="div_one_name">
                 <h6>EndAt</h6>
-                <td>{{ booking.endAt ? booking.endAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <h6>Category</h6>
-                <td>{{ booking.category.name }}</td>
-            </tr>
+                <p>{{ booking.endAt ? booking.endAt|date('Y-m-d H:i:s') : '' }}</p>
+            </div>
+    </div>
+
         </tbody>
-    </table>
 
-    <a href="{{ path('app_booking_index') }}">back to list</a>
+<div class="div_button">
+    <a href="{{ path('app_booking_calendar') }}" class="btn btn-dark button_show">back to Calendar</a>
 
-    <a href="{{ path('app_booking_edit', {'id': booking.id}) }}">edit</a>
 
     {{ include('booking/_delete_form.html.twig') }}
+</div>
+</div>
+</section>
 {% endblock %}
